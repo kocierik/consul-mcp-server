@@ -1,117 +1,128 @@
 # Consul MCP Server
 
-## Overview
-This project is a Consul MCP (Model Context Protocol) server that integrates with Consul to provide various functionalities such as service registration, health checks, and key-value store management. It is built using TypeScript and leverages the `@modelcontextprotocol/sdk` and `consul` packages.
+A Model Context Protocol (MCP) server that provides access to Consul's functionality through a standardized interface.
 
-## Prerequisites
-- Node.js (version 14 or later)
-- npm (Node Package Manager)
+## Features
 
-## Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Build the project:**
-   ```bash
-   npm run build
-   ```
-
-4. **Start the server:**
-   ```bash
-   npm start
-   ```
-
-## Environment Variables
-- `CONSUL_HOST`: The host address for Consul (default is `localhost`).
-- `CONSUL_PORT`: The port for Consul (default is `8500`).
-
-## Supported MCP Function Tools
-
-### Health Checks
-- **Register a Health Check**
-  - Command: `register-health-check`
-  - Description: Registers a new health check with Consul.
-  - Parameters: `name`, `id`, `serviceId`, `notes`, `ttl`, `http`, `interval`, `timeout`.
-
-- **Deregister a Health Check**
-  - Command: `deregister-health-check`
-  - Description: Deregisters an existing health check from Consul.
-  - Parameters: `id`.
-
-- **Get Health Checks for a Service**
-  - Command: `get-health-checks`
-  - Description: Retrieves health checks for a specified service.
-  - Parameters: `service`.
-
-### Catalog Services
-- **List Catalog Services**
-  - Command: `list-catalog-services`
-  - Description: Lists all services in the Consul catalog.
-
-- **Get Catalog Service Information**
-  - Command: `get-catalog-service`
-  - Description: Retrieves information about a specific service from the catalog.
-  - Parameters: `service`.
-
-### Catalog Nodes
-- **Get Catalog Nodes**
-  - Command: `get-catalog-nodes`
-  - Description: Retrieves nodes from the Consul catalog.
+The server provides access to the following Consul functionality:
 
 ### Service Management
-- **Register a Service**
-  - Command: `register-service`
-  - Description: Registers a new service with Consul.
-  - Parameters: `name`, `id`, `port`, `address`, `tags`.
+- List running services
+- Register and deregister services
+- Get service information
+- List catalog services
+- Get catalog service information
 
-- **Deregister a Service**
-  - Command: `deregister-service`
-  - Description: Deregisters an existing service from Consul.
-  - Parameters: `id`.
-
-- **Get Running Services**
-  - Command: `get-services`
-  - Description: Retrieves a list of running services.
+### Health Checks
+- Register health checks
+- Deregister health checks
+- Get health checks for services
 
 ### Key-Value Store
-- **Get KV Pair**
-  - Command: `get-kv`
-  - Description: Retrieves a value from the KV store.
-  - Parameters: `key`.
+- Get values from KV store
+- List keys in KV store
+- Put values in KV store
+- Delete keys from KV store
+- Perform KV transactions (atomic operations)
 
-- **List KV Keys**
-  - Command: `list-kv`
-  - Description: Lists keys in the KV store.
-  - Parameters: `prefix`.
+### Sessions
+- List sessions
+- Destroy sessions
 
-- **Put KV Pair**
-  - Command: `put-kv`
-  - Description: Puts a value in the KV store.
-  - Parameters: `key`, `value`.
+### ACL (Access Control List)
+- Create ACL tokens
+- List ACL tokens
 
-- **Delete KV Pair**
-  - Command: `delete-kv`
-  - Description: Deletes a key from the KV store.
-  - Parameters: `key`.
+### Events
+- Fire events
+- List events
 
-### Session Management
-- **List Sessions**
-  - Command: `list-sessions`
-  - Description: Lists all sessions in Consul.
+### Coordinates
+- Get node coordinates
 
-- **Destroy a Session**
-  - Command: `destroy-session`
-  - Description: Destroys a session in Consul.
-  - Parameters: `id`.
+### Operator
+- Get Raft configuration
+- Get Autopilot configuration
+
+### Network Areas
+- Join network areas
+- List network areas
+
+### Prepared Queries
+- Create prepared queries
+- Execute prepared queries
+
+### Status
+- Get current leader
+- Get current peers
+
+### Agent
+- Get agent members
+- Reload agent configuration
+- Get agent configuration
+- Get agent self information
+
+### Snapshots
+- Save Consul state snapshot
+- Restore Consul state from snapshot
+
+### Intentions (Service Mesh)
+- Create intentions
+- List intentions
+
+### Connect (Service Mesh)
+- Get Connect CA configuration
+- Update Connect CA configuration
+
+### License
+- Get current license
+- Update license
+
+### Namespaces
+- Create namespaces
+- List namespaces
+
+### Partitions
+- Create partitions
+- List partitions
+
+### System
+- Get system metrics
+- Get system health
+
+## Configuration
+
+The server can be configured using environment variables:
+
+- `CONSUL_HOST`: Consul server host (default: localhost)
+- `CONSUL_PORT`: Consul server port (default: 8500)
+
+## Usage
+
+1. Start the server:
+```bash
+node dist/index.js
+```
+
+2. The server will connect to Consul and make all functionality available through the MCP interface.
+
+## Development
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Build the project:
+```bash
+npm run build
+```
+
+3. Run tests:
+```bash
+npm test
+```
 
 ## License
-This project is licensed under the ISC License.
+
+MIT
