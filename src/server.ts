@@ -8,23 +8,12 @@ import {
   registerKVStore,
   registerServiceList,
   registerSessionTools,
-  registerACLTools,
+  // registerACLTools,
   registerEventTools,
-  registerCoordinateTools,
-  registerOperatorTools,
-  registerNetworkAreaTools,
   registerPreparedQueryTools,
   registerStatusTools,
   registerAgentTools,
-  registerSnapshotTools,
-  registerIntentionTools,
-  registerConnectTools,
-  registerLicenseTools,
-  registerNamespaceTools,
-  registerPartitionTools,
-  registerSystemTools,
   registerAdditionalAgentTools,
-  registerAdditionalKVTools
 } from "./tools/consulTools.js";
 import Consul from "consul";
 
@@ -51,23 +40,12 @@ export async function startServer() {
   registerAgentServices(server, consul);
   registerKVStore(server, consul);
   registerSessionTools(server, consul);
-  registerACLTools(server, consul);
+//  registerACLTools(server, consul);
   registerEventTools(server, consul);
-  registerCoordinateTools(server, consul);
-  registerOperatorTools(server, consul);
-  registerNetworkAreaTools(server, consul);
   registerPreparedQueryTools(server, consul);
   registerStatusTools(server, consul);
   registerAgentTools(server, consul);
-  registerSnapshotTools(server, consul);
-  registerIntentionTools(server, consul);
-  registerConnectTools(server, consul);
-  registerLicenseTools(server, consul);
-  registerNamespaceTools(server, consul);
-  registerPartitionTools(server, consul);
-  registerSystemTools(server, consul);
   registerAdditionalAgentTools(server, consul);
-  registerAdditionalKVTools(server, consul);
 
   const transport = new StdioServerTransport();
   await server.connect(transport);

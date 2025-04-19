@@ -18,6 +18,9 @@ export function formatHealthCheck(check: HealthCheck): string {
     `Name: ${check.Name || "Unknown"}`,
     `Status: ${check.Status || "Unknown"}`,
     `ServiceName: ${check.ServiceName || "Unknown"}`,
+    `ServiceID: ${check.ServiceID || "Unknown"}`, 
+    `ServiceTags: ${check.ServiceTags?.join(", ") || "None"}`,
+    `ServiceName: ${check.ServiceName || "Unknown"}`,
     `Output: ${check.Output || "No output"}`,
     "---",
   ].join("\n");

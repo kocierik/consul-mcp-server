@@ -23,30 +23,14 @@ The server provides access to the following Consul functionality:
 - List keys in KV store
 - Put values in KV store
 - Delete keys from KV store
-- Perform KV transactions (atomic operations)
 
 ### Sessions
 - List sessions
 - Destroy sessions
 
-### ACL (Access Control List)
-- Create ACL tokens
-- List ACL tokens
-
 ### Events
 - Fire events
 - List events
-
-### Coordinates
-- Get node coordinates
-
-### Operator
-- Get Raft configuration
-- Get Autopilot configuration
-
-### Network Areas
-- Join network areas
-- List network areas
 
 ### Prepared Queries
 - Create prepared queries
@@ -58,37 +42,10 @@ The server provides access to the following Consul functionality:
 
 ### Agent
 - Get agent members
-- Reload agent configuration
-- Get agent configuration
 - Get agent self information
 
-### Snapshots
-- Save Consul state snapshot
-- Restore Consul state from snapshot
-
-### Intentions (Service Mesh)
-- Create intentions
-- List intentions
-
-### Connect (Service Mesh)
-- Get Connect CA configuration
-- Update Connect CA configuration
-
-### License
-- Get current license
-- Update license
-
-### Namespaces
-- Create namespaces
-- List namespaces
-
-### Partitions
-- Create partitions
-- List partitions
-
 ### System
-- Get system metrics
-- Get system health
+- Get system health service information
 
 ## Configuration
 
