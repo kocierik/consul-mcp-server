@@ -1,5 +1,5 @@
 {
-  "name": "test-mcp",
+  "name": "consul-mcp",
   "version": "1.0.0",
   "type": "module",
   "bin": {

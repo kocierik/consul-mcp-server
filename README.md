@@ -58,7 +58,7 @@ The server can be configured using environment variables:
 
 1. Start the server:
 ```bash
-node dist/index.js
+node build/index.js
 ```
 
 2. The server will connect to Consul and make all functionality available through the MCP interface.
@@ -75,9 +75,24 @@ npm install
 npm run build
 ```
 
-3. Run tests:
+3. Run inspector:
 ```bash
-npm test
+ npm run build && npx @modelcontextprotocol/inspector node build/index.js
+```
+
+## Claude config
+
+```json
+{
+    "mcpServers": {
+        "consul-mcp": {
+            "command": "node",
+            "args": [
+                "/ABSOLUTE/PATH/TO/PARENT/FOLDER/consul-mcp-server/build/index.js"
+            ]
+        }
+    }
+}
 ```
 
 ## License
