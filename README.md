@@ -1,10 +1,15 @@
 # Consul MCP Server
 
 A Model Context Protocol (MCP) server that provides access to Consul's functionality through a standardized interface.
+<center>
+<video src="https://github.com/user-attachments/assets/81bf7d70-e837-4c99-8312-2c85ccace1f4"></video>
+</center>
 
 ## Features
 
 The server provides access to the following Consul functionality:
+
+
 
 ### Service Management
 - List running services
