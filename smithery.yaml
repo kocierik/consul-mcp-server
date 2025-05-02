@@ -1,0 +1,38 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required: []
+    properties:
+      consulHost:
+        type: string
+        default: localhost
+        description: Consul server host
+      consulPort:
+        type: number
+        default: 8500
+        description: Consul server port
+      dotenvPath:
+        type: string
+        description: Path to .env file (optional)
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const env = {};
+      if (config.consulHost !== undefined) env.CONSUL_HOST = config.consulHost;
+      if (config.consulPort !== undefined) env.CONSUL_PORT = String(config.consulPort);
+      if (config.dotenvPath !== undefined) env.DOTENV_PATH = config.dotenvPath;
+      return {
+        command: 'node',
+        args: ['build/index.js'],
+        env
+      };
+    }
+  exampleConfig:
+    consulHost: localhost
+    consulPort: 8500
+    dotenvPath: .env
