@@ -1,5 +1,7 @@
 # Consul MCP Server 🚀 
 
+[![smithery badge](https://smithery.ai/badge/@kocierik/consul-mcp-server)](https://smithery.ai/server/@kocierik/consul-mcp-server)
+
 A Model Context Protocol (MCP) server that provides access to Consul's functionality through a standardized interface.
 <p align="center">
 <a  href="https://glama.ai/mcp/servers/@kocierik/consul-mcp-server">
@@ -100,6 +102,14 @@ npm run build
         }
     }
 }
+```
+
+### Installing via Smithery
+
+To install Consul Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kocierik/consul-mcp-server):
+
+```bash
+npx -y @smithery/cli install @kocierik/consul-mcp-server --client claude
 ```
 
 ## License
