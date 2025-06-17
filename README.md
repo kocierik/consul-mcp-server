@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/kocierik-consul-mcp-server-badge.png)](https://mseep.ai/app/kocierik-consul-mcp-server)
+
 # Consul MCP Server 🚀 
 
 [![smithery badge](https://smithery.ai/badge/@kocierik/consul-mcp-server)](https://smithery.ai/server/@kocierik/consul-mcp-server)
